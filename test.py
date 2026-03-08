@@ -1,11 +1,13 @@
 # Bug Fixer.
 import time
+from turtle import forward
 import numpy as np
 from det_gen import det
 from adjoint_inverse import adjoint, inverse
 from upper_triangular import upper_tri
 from lower_triangular import lower_tri
 from solution_inverse import sol_inv
+from forwards import forward_sub
 a = np.array([
     [ 0,  3, -1,  2],
     [ 4,  1,  0, -2],
@@ -34,3 +36,11 @@ print("The time taken to calcualte the solution using the inverse method is ", (
 lu = np.array([[1, 8, 9], [4, 5, 6], [7, 2, 3]])
 print(upper_tri(lu))
 print(lower_tri(lu))
+u = np.array([
+    [ 2.0,  0.0,  0.0],
+    [ 3.0, -1.0,  0.0],
+    [-1.0,  2.0,  4.0]
+])
+b = np.array([4.0, 9.0, -4.0]).reshape(-1, 1)
+x = forward_sub(u, b)
+print(x)
