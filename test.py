@@ -37,10 +37,10 @@ lu = np.array([[1, 8, 9], [4, 5, 6], [7, 2, 3]])
 print(upper_tri(lu))
 print(lower_tri(lu))
 u = np.array([
-    [ 2.0,  0.0,  0.0],
-    [ 3.0, -1.0,  0.0],
-    [-1.0,  2.0,  4.0]
+    [ 1.0,  2.0, -1.0],
+    [ 2.0, -1.0,  1.0],
+    [-1.0,  1.0,  2.0]
 ])
-b = np.array([4.0, 9.0, -4.0]).reshape(-1, 1)
+b = np.array([-3.0, 8.0, 3.0])
 x = forward_sub(u, b)
 print(x)

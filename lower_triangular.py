@@ -7,7 +7,7 @@ import numpy as np
 def lower_tri(matrix_original):
     swap_count = 0
     matrix = matrix_original.copy().astype(float)
-    for k in range(matrix.shape[1] - 1, -1, -1):
+    for k in range(matrix.shape[0] - 1, -1, -1):
         offset = np.argmax(np.abs(matrix[0:k+1, k]))
         row_max = offset
         if matrix[row_max, k] == 0:
